@@ -5,7 +5,7 @@ Ik moet 2 leds om en om laten knipperen door op de knop te drukken.
 - 1 10k resistor
 - 1 button
 ## Tinker uitwerking
-![[Screenshot_3.png]]
+![Screenshot](Screenshot_3.png)
 
 ## Uitwerking
 ![[Video_3.mov]]
