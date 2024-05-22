@@ -6,4 +6,4 @@ Ik moet 2 leds om de 1,5 seconden laten knipperen.
 ![Screenshot](Screenshot_1.png)
 
 ## Werking
-![[Video_1.mov]]
+![Video](Video_1.mov)
