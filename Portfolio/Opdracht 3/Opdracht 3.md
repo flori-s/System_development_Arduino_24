@@ -8,4 +8,4 @@ Ik moet 2 leds om en om laten knipperen door op de knop te drukken.
 ![Screenshot](Screenshot_3.png)
 
 ## Uitwerking
-![[Video_3.mov]]
+![Video](Video_3.mov)
