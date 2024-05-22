@@ -3,8 +3,9 @@ Ik moet een servo meter bedienen met 2 knoppen, hij moet 3 verschillende command
 - 2 knoppen
 - 2 10k ohm resistor
 - 1 micro servo
+
 ## Tinker Uitwerking
-![[Screenshot_5.png]]
+![Screenshot](Screenshot_5.png)
 
 ## Uitwerking
-![[Video_5.mov]]
+![Video](Video_5.mov)
