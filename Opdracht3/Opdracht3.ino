@@ -31,17 +31,22 @@ void btn(int dTime){
       counter++;
       
       // Update LED states based on counter value
-      // The Counter starts at 0 so after the first push the counter is 1 which will trigger the else. After the second push the copunter is 2 which meets the if statement. 
+      // The Counter starts at 0 so after the first push the counter is 1 which will trigger the else. After the second push the counter is 2 which meets the if statement. 
       if (counter % 2 == 0) {
-        digitalWrite(ledPin1, LOW);  // Turn off LED 1
-        digitalWrite(ledPin2, HIGH); // Turn on LED 2
+        // Turn off LED 1
+        digitalWrite(ledPin1, LOW);  
+        // Turn on LED 2
+        digitalWrite(ledPin2, HIGH); 
       } else {
-        digitalWrite(ledPin1, HIGH); // Turn on LED 1
-        digitalWrite(ledPin2, LOW);  // Turn off LED 2
+        // Turn on LED 1
+        digitalWrite(ledPin1, HIGH); 
+        // Turn off LED 2
+        digitalWrite(ledPin2, LOW);  
       }
-      
-      delay(dTime); // Delay for debouncing
+      // Delay for debouncing
+      delay(dTime);
     }
   }
-  lastButtonState = buttonState; // Save the current state as the last state
+  // Save the current state as the last state
+  lastButtonState = buttonState; 
 }

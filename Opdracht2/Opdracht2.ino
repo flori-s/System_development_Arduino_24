@@ -16,21 +16,29 @@ void loop() {
 void knightrider(int dTime) {
   // Move right to left
   for (int i = 0; i < 8; i++) {
+    // set pin High
     digitalWrite(pinArray[i], HIGH);
+    // delay 80 ms
     delay(dTime);
-    if (i > 0) {  // Turn off the previous LED
+    // Turn off the previous LED for a smooth transition
+    if (i > 0) {  
       digitalWrite(pinArray[i - 1], LOW);
     }
   }
-  digitalWrite(pinArray[7], LOW); // Turn off the last LED after the loop
+  // Turn off the last LED after the loop for a smooth transition
+  digitalWrite(pinArray[7], LOW); 
 
   // Move left to right
   for (int i = 7; i >= 0; i--) {
+    // set pin High
     digitalWrite(pinArray[i], HIGH);
+    // delay 80 ms
     delay(dTime);
-    if (i < 7) {  // Turn off the previous LED
+    // Turn off the previous LED for a smooth transition
+    if (i < 7) {  
       digitalWrite(pinArray[i + 1], LOW);
     }
   }
-  digitalWrite(pinArray[0], LOW); // Turn off the first LED after the loop
+  // Turn off the last LED after the loop for a smooth transition
+  digitalWrite(pinArray[0], LOW); 
 }
