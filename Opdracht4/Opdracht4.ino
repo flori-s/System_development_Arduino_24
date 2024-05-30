@@ -1,42 +1,47 @@
-// Creating pin array for the pins needed
+/**
+  * @author https://forum.arduino.cc/t/help-with-analog-input/379975
+  * @author CHATGPT
+*/
+
+// Een pin array aanmaken voor alle pinnen
 int pinArray[] = {3, 5, 7, 8, 10, 12};
-// Giving the input a analog pin
+// De pin aan een analoge pin koppelen
 int PinPotentiometer = A5;
-// setting the number of leds
+// Het aantal leds defineren
 int numLeds = 6;
 
 void setup() {
-  // setting up pin mode for every pin in the array using a loop
+  // Alle pinModes defineren voor de pins in de array  
   for (int count = 0; count < 6; count++) {
     pinMode(pinArray[count], OUTPUT);
   }
-  // setting up pin mode for the analog input
+  // De pinMode defineren voor de anologe pin
   pinMode(PinPotentiometer, INPUT);
 }
 
 void loop(){
-  //calling method
+  // Methode aanroepn met 50 als parameter
   reactOnInput(50);
 }
 
 void reactOnInput(int dTime){
-  // getting the sesonr value
+  // De sensor waarde ophalen
   int sensorValue = analogRead(PinPotentiometer);
-  // mapping the potentiometer with the sensorvalue, 
+  // De potentiemeter mappen met de sensorvalue, 
   // minimum sensorvalue, maximum sensorvalue, maximum mapped value, minimum mapped value 
   int ledThreshold = map(sensorValue, 0, 1023, numLeds, 0);
 
-  // Control the LEDs based on the potentiometer value
+  // De leds aansturen gebasseerd op de sensorvalue
   for (int i = 0; i < numLeds; i++) {
     if (i < ledThreshold) {
-      // Turn on LED
+      // Doe led aan
       digitalWrite(pinArray[i], LOW); 
     } else {
-      // Turn off LED
+      // Doe led uit
       digitalWrite(pinArray[i], HIGH);  
     }
   }
   
-  // Small delay to stabilize the reading
+  // Een delay om het duidelijker te maken
   delay(dTime); 
 }

@@ -1,20 +1,20 @@
 void setup() {
-  // Defining the pin numbers and mode.
+  // De pin nummers defineren
   pinMode(13, OUTPUT);
   pinMode(10, OUTPUT);
 }
 
 void loop() {
-  // Set pin 10 to high
+  // Pin 10 op HIGH zetten
   digitalWrite(10, HIGH);
-  // Set delay of 1.5 s
+  // Vertraging van 1.5 s
   delay(1500);
-  // Set pin 10 to low
+  // Pin 10 op LOW zetten
   digitalWrite(10, LOW);
-  // Set pin 13 to high
+  // Pin 13 op HIGH zetten
   digitalWrite(13, HIGH);
-  // Set delay of 1.5 s
+  // Vertraging van 1.5 s
   delay(1500);
-  // Set pin 13 to low
+  // Pin 13 op LOW zetten
   digitalWrite(13, LOW);
 }

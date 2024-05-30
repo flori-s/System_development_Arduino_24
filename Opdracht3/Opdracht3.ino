@@ -1,52 +1,52 @@
-// Defining the pin's
+// Alle pinnen defineren
 int btnPin = 6;
 int ledPin1 = 8;
 int ledPin2 = 13;
 
-// Defining the variables
+// Variabelen defineren
 int buttonState = 0;        
 int lastButtonState = 0;     
 int counter = 0; 
 
 void setup(){
-  // pinMode setup
+  // pinMode defineren
   pinMode(btnPin, INPUT);
   pinMode(ledPin1, OUTPUT);
   pinMode(ledPin2, OUTPUT);
 }
 
 void loop() {
-  // Calling the btn method with 50 as parameter
+  // De btn methode aanroepen met 50 als parameter
   btn(50);
 }
 
 void btn(int dTime){
-  // Get btn state
+  // Btn state ophalen
   buttonState = digitalRead(btnPin); 
 
-  // Check if the buttonstate has changed
+  // Check of de buttonstate is veranderd 
   if (buttonState != lastButtonState) {
     if (buttonState == HIGH) {
       // Counter + 1
       counter++;
       
-      // Update LED states based on counter value
-      // The Counter starts at 0 so after the first push the counter is 1 which will trigger the else. After the second push the counter is 2 which meets the if statement. 
+      // LED updaten gebasseerd op de counter value
+      // The Counter start bij 0 dus na de eerste druk is de counter 1 dit triggered de else. Na de tweede druk is de counter 2 dit komt overeen met de if statement. 
       if (counter % 2 == 0) {
-        // Turn off LED 1
+        // Doe LED 1 uit
         digitalWrite(ledPin1, LOW);  
-        // Turn on LED 2
+        // Doe LED 2 aan
         digitalWrite(ledPin2, HIGH); 
       } else {
-        // Turn on LED 1
+        // Doe LED 1 aan
         digitalWrite(ledPin1, HIGH); 
-        // Turn off LED 2
+        // Doe LED 2 uit
         digitalWrite(ledPin2, LOW);  
       }
-      // Delay for debouncing
+      // Vertraging 
       delay(dTime);
     }
   }
-  // Save the current state as the last state
+  // Sla de cuurent state op als de laatste state 
   lastButtonState = buttonState; 
 }

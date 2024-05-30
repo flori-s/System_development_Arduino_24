@@ -1,44 +1,44 @@
-// Create array for the pin's
+// Array maken voor alle pinnen
 const int pinArray[] = {2, 3, 4, 5, 6, 7, 8, 9};    
 
 void setup() {
-  // pinMode setup using loop
+  // pinMode defineren door middel van een loop
   for (int count = 0; count < 8; count++) {
     pinMode(pinArray[count], OUTPUT);
   }
 }
 
 void loop() {
-  // Calling the btn method with 80 as parameter
+  // De knightrider methode aanroepen met 80 als parameter
   knightrider(80);
 }
 
 void knightrider(int dTime) {
-  // Move right to left
+  // Rechts naar links
   for (int i = 0; i < 8; i++) {
-    // set pin High
+    // Zet pin op HIGH
     digitalWrite(pinArray[i], HIGH);
-    // delay 80 ms
+    // Vertraging 80 ms
     delay(dTime);
-    // Turn off the previous LED for a smooth transition
+    // Vorige led uit doen voor een mooie transitie
     if (i > 0) {  
       digitalWrite(pinArray[i - 1], LOW);
     }
   }
-  // Turn off the last LED after the loop for a smooth transition
+  // Laatste led uit doen voor een vloeiendere transitie
   digitalWrite(pinArray[7], LOW); 
 
-  // Move left to right
+  // Links naar rechts
   for (int i = 7; i >= 0; i--) {
-    // set pin High
+    // Zet pin op HIGH
     digitalWrite(pinArray[i], HIGH);
-    // delay 80 ms
+    // Vertraging 80 ms
     delay(dTime);
-    // Turn off the previous LED for a smooth transition
+    // Vorige led uit doen voor een mooie transitie
     if (i < 7) {  
       digitalWrite(pinArray[i + 1], LOW);
     }
   }
-  // Turn off the last LED after the loop for a smooth transition
+  // Laatste led uit doen voor een vloeiendere transitie
   digitalWrite(pinArray[0], LOW); 
 }
